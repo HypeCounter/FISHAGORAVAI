@@ -1,0 +1,8 @@
+FishGame/Library/
+FishGame/Temp/
+FishGame/obj/
+FishGame/Assembly-CSharp.csproj
+FishGame/.vs/FishGame/v15/Server/sqlite3/db.lock
+FishGame/.vs/FishGame/v15/Server/sqlite3/storage.ide-wal
+FishGame/.vs/FishGame/v15/Server/sqlite3/storage.ide-shm
+FishGame/.vs/FishGame/v15/Server/sqlite3/storage.ide
