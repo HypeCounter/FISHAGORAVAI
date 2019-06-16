@@ -22,7 +22,7 @@ public class BaitController : MonoBehaviour
         {
             // peixePescado.transform.position = this.transform.position;
             // eu ia fazer o peixe acompanhar o anzol ate o pescador mas parece que o peixe sai voando pelo mapa... como nao tenho tempo e não tenho ajuda do grupo que não sabe programa e sim ver gameplay no youtube vou fazer da forma mais idiota possivel
-
+            ///
             Destroy(peixePescado.gameObject);
             Debug.Log("pescou");
             peixeNoAnzol.SetActive(true);
@@ -34,6 +34,9 @@ public class BaitController : MonoBehaviour
             peixeNoAnzol.SetActive(false);
 
             //// FAZ A PONTUAÇÃO AQUI!!!!!!!!!!!!!!!!!!!!!!!!
+            //////
+            ////
+            ///
             /// faz animaçao do pescador lançando ... depois da animacao entra esse transform
             /// 
 
@@ -64,6 +67,11 @@ public class BaitController : MonoBehaviour
             Debug.Log("PEGUEI UM!!!");
             pegouUm = true;
 
+        }
+        else if (collision.gameObject.tag == "SHARK")
+        {
+            /////// FAZ O GAME OVER AQUI!!!!!!!!!!!!!!!!
+            Debug.Log("GAMEOVER");
         }
 
     }
