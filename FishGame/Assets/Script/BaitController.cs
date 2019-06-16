@@ -5,8 +5,10 @@ using UnityEngine;
 public class BaitController : MonoBehaviour
 {
     public static bool pescou = false;
+    public static bool pegouUm = false;
     public GameObject peixePescado;
-
+    [SerializeField] GameObject peixeNoAnzol;
+    [SerializeField] GameObject anzolPos;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,23 @@ public class BaitController : MonoBehaviour
 
             Destroy(peixePescado.gameObject);
             Debug.Log("pescou");
+            peixeNoAnzol.SetActive(true);
+            
+           
+        }
+        if (pegouUm)
+        {
+            peixeNoAnzol.SetActive(false);
+
+            //// FAZ A PONTUAÇÃO AQUI!!!!!!!!!!!!!!!!!!!!!!!!
+            /// faz animaçao do pescador lançando ... depois da animacao entra esse transform
+            /// 
+
+            this.transform.position = anzolPos.transform.position;
+            pegouUm = false;
+            pescou = false;
+
+
 
         }
     }
@@ -31,7 +50,7 @@ public class BaitController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         print("foi");
-        if (collision.gameObject.tag == "Fish")
+        if ((collision.gameObject.tag == "Fish")&& (!pescou)) /// anzol pega peixe na colisao
         {
          
             pescou = true;
@@ -43,7 +62,7 @@ public class BaitController : MonoBehaviour
         {
             pescou = false;
             Debug.Log("PEGUEI UM!!!");
-            
+            pegouUm = true;
 
         }
 
